@@ -1,28 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pet_vet_project/src/app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(
-    MaterialApp(
-      title: 'Pet Vet Starter',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: true,
+    ProviderScope(
+      child: EasyLocalization(
+        //TODO: Add supported locales and translations
+        supportedLocales: const [Locale('en')],
+        fallbackLocale: const Locale('uk'),
+        path: 'assets/translations',
+        child: const MyApp(),
       ),
-      home: const HomePage(),
     ),
   );
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pet Vet Starter'),
-      ),
-    );
-  }
 }

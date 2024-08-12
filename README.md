@@ -5,6 +5,7 @@ The Veterinary Clinic App is designed for tablets and the web. It’s meant to h
 ## Getting Started
 
 ![Cat and Dog Image](pet_vet.jpg)
+![2024-08-12-updates](2024-08-12-updates.gif)
 
  • Patient Management: Add new patients and edit their details.
  • Visit Management: Schedule new visits, view past visits, and assign treatments.
@@ -18,6 +19,16 @@ The Veterinary Clinic App is designed for tablets and the web. It’s meant to h
  • Using Multiple Packages: I’ll get experience using various Flutter packages.
 
 #### Project Timeline
+
+##### 12.08.2024
+
+• Added basic responsive Home screen.
+• Added Patients List screen.
+• Created PetModel.
+• Integrated GoRouter for navigation.
+• Integrated Riverpod for state management.
+• Integrated EasyLocalization for localization support.
+• Added basic styling and TextStyles for consistent UI.
 
 ##### 26.07.2024
 
