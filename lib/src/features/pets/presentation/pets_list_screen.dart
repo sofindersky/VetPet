@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_controller.dart';
+import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_header_row.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_row.dart';
 
 //TODO: For now the riverpod package is used; maybe refactor later to use BLOC
@@ -28,14 +29,15 @@ class PetsListScreen extends ConsumerWidget {
                 data: (data) => Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListView.separated(
-                      separatorBuilder: (context, index) => const SizedBox(
-                            height: 8,
-                          ),
-                      itemCount: data.length,
-                      itemBuilder: (context, index) {
-                        final pet = data[index];
-                        return PetsListScreenRow(pet: pet);
-                      },),
+                    separatorBuilder: (context, index) => const SizedBox(
+                      height: 8,
+                    ),
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      final pet = data[index];
+                      return PetsListScreenRow(pet: pet);
+                    },
+                  ),
                 ),
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (error, stackTrace) => Center(
