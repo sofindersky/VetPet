@@ -35,7 +35,7 @@ class PetsListScreen extends ConsumerWidget {
                       itemBuilder: (context, index) {
                         final pet = data[index];
                         return PetsListScreenRow(pet: pet);
-                      }),
+                      },),
                 ),
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (error, stackTrace) => Center(

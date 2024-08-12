@@ -37,6 +37,6 @@ class TwoColumnLayout extends StatelessWidget {
                   const SizedBox(height: 10.0),
                   end,
                 ],
-              ));
+              ),);
   }
 }

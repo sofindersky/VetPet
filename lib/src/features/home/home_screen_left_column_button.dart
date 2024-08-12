@@ -5,7 +5,7 @@ import 'package:pet_vet_project/src/core/style/text_style.dart';
 
 class HomeScreenLeftColumnButton extends StatelessWidget {
   const HomeScreenLeftColumnButton(
-      {super.key, required this.onTap, required this.text, required this.icon});
+      {super.key, required this.onTap, required this.text, required this.icon,});
   final VoidCallback onTap;
   final String text;
   final IconData icon;

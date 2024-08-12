@@ -21,6 +21,6 @@ final goRouter = GoRouter(
           builder: (context, state) => const PetsListScreen(),
         ),
       ],
-    )
+    ),
   ],
 );

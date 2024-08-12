@@ -48,12 +48,12 @@ class HomeScreenBody extends StatelessWidget {
                     context.goNamed(AppRoutes.petList.name);
                   },
                   text: tr('fluffy_patients'),
-                  icon: Icons.pets),
+                  icon: Icons.pets,),
               const SizedBox(height: 8),
               HomeScreenLeftColumnButton(
                   onTap: () {},
                   text: tr('owners'),
-                  icon: Icons.person_pin_sharp),
+                  icon: Icons.person_pin_sharp,),
               const SizedBox(height: 8),
             ],
           ),

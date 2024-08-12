@@ -15,7 +15,7 @@ class Font extends CustomTextStyle {
       : super._(
             fontFamily: _fontFamily,
             fontSize: 14.0,
-            color: Colors.blueGrey[900]);
+            color: Colors.blueGrey[900],);
 }
 
 class CustomTextStyle extends TextStyle {

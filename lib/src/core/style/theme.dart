@@ -11,7 +11,7 @@ class CTheme {
     colorScheme: _base.colorScheme.copyWith(
         primary: CustomColors.beige,
         onPrimary: Colors.white,
-        secondary: CustomColors.babyBlue),
+        secondary: CustomColors.babyBlue,),
     cardTheme: _base.cardTheme.copyWith(
       color: CustomColors.softMintGreen,
       shape: RoundedRectangleBorder(

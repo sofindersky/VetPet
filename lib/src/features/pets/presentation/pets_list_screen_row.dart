@@ -24,7 +24,7 @@ class PetsListScreenRow extends ConsumerWidget {
             Text(pet.ownerFullName, style: s16w400black).expanded(),
             Text(dateFormatter.format(pet.birthday), style: s16w400black)
                 .expanded(),
-            Text(pet.type.name, style: s16w400black).expanded()
+            Text(pet.type.name, style: s16w400black).expanded(),
           ],
         ),
       ],
