@@ -26,36 +26,40 @@ class HomeScreenBody extends StatelessWidget {
     final double avatarSize = width >= 600 ? width : width * 0.25;
     return Scaffold(
       backgroundColor: CustomColors.beige,
-      body: TwoColumnLayout(
-        start: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: avatarSize,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16.0),
-              child: Image.asset(
-                AppImage.logo,
-                fit: BoxFit.cover,
+      body: SafeArea(
+        child: TwoColumnLayout(
+          start: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              height: avatarSize,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16.0),
+                child: Image.asset(
+                  AppImage.logo,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
-        ),
-        end: SizedBox(
-          child: HomeScreenLeftColumn(
-            children: [
-              HomeScreenLeftColumnButton(
+          end: SizedBox(
+            child: HomeScreenLeftColumn(
+              children: [
+                HomeScreenLeftColumnButton(
                   onTap: () {
                     context.goNamed(AppRoutes.petList.name);
                   },
                   text: tr('fluffy_patients'),
-                  icon: Icons.pets,),
-              const SizedBox(height: 8),
-              HomeScreenLeftColumnButton(
+                  icon: Icons.pets,
+                ),
+                const SizedBox(height: 8),
+                HomeScreenLeftColumnButton(
                   onTap: () {},
                   text: tr('owners'),
-                  icon: Icons.person_pin_sharp,),
-              const SizedBox(height: 8),
-            ],
+                  icon: Icons.person_pin_sharp,
+                ),
+                const SizedBox(height: 8),
+              ],
+            ),
           ),
         ),
       ),
