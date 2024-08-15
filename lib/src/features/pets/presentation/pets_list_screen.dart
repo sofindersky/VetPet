@@ -4,9 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
+import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_controller.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_header_row.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_row.dart';
+import 'package:pet_vet_project/src/routes/app_routes.dart';
 
 //TODO: For now the riverpod package is used; maybe refactor later to use BLOC
 class PetsListScreen extends ConsumerWidget {
@@ -29,13 +31,20 @@ class PetsListScreen extends ConsumerWidget {
                 data: (data) => Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListView.separated(
-                    separatorBuilder: (context, index) => const SizedBox(
-                      height: 8,
-                    ),
+                    separatorBuilder: (context, index) => gapH8,
                     itemCount: data.length,
                     itemBuilder: (context, index) {
                       final pet = data[index];
-                      return PetsListScreenRow(pet: pet);
+                      return PetsListScreenRow(
+                        pet: pet,
+                        onTap: () {
+                          context.goNamed(
+                            AppRoutes.petDetails.name,
+                            pathParameters: {'id': pet.petId},
+                            extra: {'petName': pet.petName},
+                          );
+                        },
+                      );
                     },
                   ),
                 ),

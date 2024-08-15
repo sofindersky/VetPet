@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
+import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 
 class HomeScreenLeftColumnButton extends StatelessWidget {
-  const HomeScreenLeftColumnButton(
-      {super.key, required this.onTap, required this.text, required this.icon,});
+  const HomeScreenLeftColumnButton({
+    super.key,
+    required this.onTap,
+    required this.text,
+    required this.icon,
+  });
   final VoidCallback onTap;
   final String text;
   final IconData icon;
@@ -25,9 +30,7 @@ class HomeScreenLeftColumnButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(icon, size: 48, color: CustomColors.softPink),
-              const SizedBox(
-                width: 12,
-              ),
+              gapW12,
               Text(text, style: s24w400black).expanded(),
             ],
           ),

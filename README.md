@@ -20,6 +20,10 @@ The Veterinary Clinic App is designed for tablets and the web. It’s meant to h
 
 #### Project Timeline
 
+##### 15.08.2024
+
+• For now, Firebase has not been implemented yet, so ‘fake’ data is being used to demonstrate the UI changes. Firebase is planned to be implemented later.
+
 ##### 12.08.2024
 
 • Added basic responsive Home screen.
@@ -34,3 +38,4 @@ The Veterinary Clinic App is designed for tablets and the web. It’s meant to h
 
  • Starter Project Added: Basic app with no features yet.
  • Very basic digram: [Link](https://app.diagrams.net/#G14CaQT5roc3dvEoZBYau0jwQQxhuQzHS9#%7B%22pageId%22%3A%22kXz09J5oTDUhG0XenFSC%22%7D)
+  

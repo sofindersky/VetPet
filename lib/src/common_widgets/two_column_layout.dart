@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_vet_project/src/core/helper/gaps.dart';
 
 class TwoColumnLayout extends StatelessWidget {
   const TwoColumnLayout({
@@ -16,27 +17,28 @@ class TwoColumnLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-        builder: (context, constraints) => constraints.maxWidth >= 600
-            ? SizedBox(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(flex: startFlex, child: start),
-                      const SizedBox(width: 4.0),
-                      Expanded(flex: endFlex, child: end),
-                    ],
-                  ),
+      builder: (context, constraints) => constraints.maxWidth >= 600
+          ? SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(flex: startFlex, child: start),
+                    gapW8,
+                    Expanded(flex: endFlex, child: end),
+                  ],
                 ),
-              )
-            : Column(
-                children: [
-                  start,
-                  const SizedBox(height: 10.0),
-                  end,
-                ],
-              ),);
+              ),
+            )
+          : Column(
+              children: [
+                start,
+                const SizedBox(height: 10.0),
+                end,
+              ],
+            ),
+    );
   }
 }

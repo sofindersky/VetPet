@@ -6,7 +6,9 @@
     "type": "Type",
     "cat": "Cat",
     "dog": "Dog",
-    "birth_date": "Birth Date"
+    "birth_date": "Birth Date",
+    "info": "Info",
+    "age": "Age"
 
 
 }

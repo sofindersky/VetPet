@@ -7,6 +7,11 @@ class FakePetsRepository {
     await Future.delayed(const Duration(seconds: 1));
     return pets;
   }
+
+  Future<Pet> fetchPetById(String id) async {
+    await Future.delayed(const Duration(seconds: 1));
+    return pets.firstWhere((pet) => pet.petId == id);
+  }
 }
 
 final fakeRepositoryProvider =

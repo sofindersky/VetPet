@@ -11,4 +11,12 @@ class PetsController extends _$PetsController {
   Future<List<Pet>> build() async {
     return await ref.read(fakeRepositoryProvider).fetchPets();
   }
+
+  Future<Pet> fetchPetById(String id) async {
+    return await ref.read(fakeRepositoryProvider).fetchPetById(id);
+  }
 }
+
+final petByIdProvider = FutureProvider.family<Pet, String>((ref, id) async {
+  return ref.read(fakeRepositoryProvider).fetchPetById(id);
+});

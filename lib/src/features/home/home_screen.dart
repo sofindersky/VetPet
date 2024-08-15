@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
+import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/core/helper/images.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/features/home/home_screen_left_column.dart';
@@ -51,13 +52,13 @@ class HomeScreenBody extends StatelessWidget {
                   text: tr('fluffy_patients'),
                   icon: Icons.pets,
                 ),
-                const SizedBox(height: 8),
+                gapH8,
                 HomeScreenLeftColumnButton(
                   onTap: () {},
                   text: tr('owners'),
                   icon: Icons.person_pin_sharp,
                 ),
-                const SizedBox(height: 8),
+                gapH8,
               ],
             ),
           ),

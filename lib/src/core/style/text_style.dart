@@ -7,15 +7,16 @@ CustomTextStyle get appBarTitle => font.s24.w600.black;
 CustomTextStyle get s12w400black => font.s12.w400.black;
 
 CustomTextStyle get s16w400black => font.s16.w400.black;
-
+CustomTextStyle get s16w500black => font.s16.w500.black;
 CustomTextStyle get s24w400black => font.s24.w400.black;
 
 class Font extends CustomTextStyle {
   Font()
       : super._(
-            fontFamily: _fontFamily,
-            fontSize: 14.0,
-            color: Colors.blueGrey[900],);
+          fontFamily: _fontFamily,
+          fontSize: 14.0,
+          color: Colors.blueGrey[900],
+        );
 }
 
 class CustomTextStyle extends TextStyle {
