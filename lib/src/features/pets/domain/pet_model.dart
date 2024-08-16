@@ -1,10 +1,14 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:easy_localization/easy_localization.dart';
+part 'pet_model.freezed.dart';
+part 'pet_model.g.dart';
 
+@JsonEnum()
 enum PetType {
   cat,
-  dog;
+  dog,
+  other;
 
   String get name {
     switch (this) {
@@ -12,88 +16,34 @@ enum PetType {
         return tr('cat');
       case PetType.dog:
         return tr('dog');
+      case PetType.other:
+        return tr('other');
     }
   }
 }
 
-class Pet {
-  final String petName;
-  final String petId;
-  final int ownerId;
-  final String ownerFullName;
-  final DateTime birthday;
-  final PetType type;
-  final String petHistory;
-  final int age;
+@freezed
+class Pet with _$Pet {
+  const Pet._();
+  const factory Pet({
+    required String petName,
+    required String petId,
+    required int ownerId,
+    required String ownerFullName,
+    required DateTime birthday,
+    @Default(PetType.other) PetType type,
+    required String petHistory,
+  }) = _Pet;
 
-  Pet({
-    required this.petName,
-    required this.petId,
-    required this.ownerId,
-    required this.ownerFullName,
-    required this.birthday,
-    required this.type,
-    required this.petHistory,
-  }) : age = calculateAge(birthday);
+  factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
 
-  static int calculateAge(final DateTime birthday) {
+  int get age {
     final now = DateTime.now();
-    final age = now.year - birthday.year;
+    int age = now.year - birthday.year;
     if (now.month < birthday.month ||
         (now.month == birthday.month && now.day < birthday.day)) {
-      return age - 1;
+      age--;
     }
     return age;
-  }
-
-  //TODO: Later add toMap and fromMap methods to convert to and from json when the firebase is added
-
-  Pet copyWith({
-    String? petName,
-    String? petId,
-    int? ownerId,
-    String? ownerFullName,
-    DateTime? birthday,
-    PetType? type,
-    String? petHistory,
-  }) {
-    return Pet(
-      petName: petName ?? this.petName,
-      petId: petId ?? this.petId,
-      ownerId: ownerId ?? this.ownerId,
-      ownerFullName: ownerFullName ?? this.ownerFullName,
-      birthday: birthday ?? this.birthday,
-      type: type ?? this.type,
-      petHistory: petHistory ?? this.petHistory,
-    );
-  }
-
-  @override
-  String toString() {
-    return 'Pet(petName: $petName, petId: $petId, ownerId: $ownerId, ownerFullName: $ownerFullName, birthday: $birthday, type: $type, petHistory: $petHistory)';
-  }
-
-  @override
-  bool operator ==(covariant Pet other) {
-    if (identical(this, other)) return true;
-
-    return other.petName == petName &&
-        other.petId == petId &&
-        other.ownerId == ownerId &&
-        other.ownerFullName == ownerFullName &&
-        other.birthday == birthday &&
-        other.type == type &&
-        other.petHistory == petHistory;
-  }
-
-  @override
-  int get hashCode {
-    return petName.hashCode ^
-        petId.hashCode ^
-        ownerId.hashCode ^
-        ownerFullName.hashCode ^
-        birthday.hashCode ^
-        type.hashCode ^
-        petHistory.hashCode;
   }
 }
