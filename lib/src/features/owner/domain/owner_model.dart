@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
 
 part 'owner_model.freezed.dart';
 part 'owner_model.g.dart';
@@ -11,11 +10,10 @@ class Owner with _$Owner {
   @JsonSerializable(explicitToJson: true)
   const factory Owner({
     required String fullName,
-    required int ownerId,
+    required int ownerId, // Ідентифікатор власника
     required String email,
     required String phoneNumber,
     required String address,
-    required Pet pet,
   }) = _Owner;
 
   factory Owner.fromJson(Map<String, dynamic> json) => _$OwnerFromJson(json);

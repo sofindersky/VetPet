@@ -12,7 +12,6 @@ _$OwnerImpl _$$OwnerImplFromJson(Map<String, dynamic> json) => _$OwnerImpl(
       email: json['email'] as String,
       phoneNumber: json['phoneNumber'] as String,
       address: json['address'] as String,
-      pet: Pet.fromJson(json['pet'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$OwnerImplToJson(_$OwnerImpl instance) =>
@@ -22,5 +21,4 @@ Map<String, dynamic> _$$OwnerImplToJson(_$OwnerImpl instance) =>
       'email': instance.email,
       'phoneNumber': instance.phoneNumber,
       'address': instance.address,
-      'pet': instance.pet.toJson(),
     };

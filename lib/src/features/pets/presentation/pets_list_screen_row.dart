@@ -23,8 +23,6 @@ class PetsListScreenRow extends ConsumerWidget {
               Image.asset(petImage, width: 50, height: 50).expanded(),
               Text(pet.petName, style: s16w400black).expanded(),
               Text(pet.ownerFullName, style: s16w400black).expanded(),
-              Text(dateFormatter.format(pet.birthday), style: s16w400black)
-                  .expanded(),
               Text(pet.type.name, style: s16w400black).expanded(),
             ],
           ),

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/core/helper/images.dart';
@@ -26,24 +27,30 @@ class HomeScreenBody extends StatelessWidget {
     final width = MediaQuery.sizeOf(context).width;
     final double avatarSize = width >= 600 ? width : width * 0.25;
     return Scaffold(
+      appBar: MainAppBar(
+        icon: const Icon(Icons.settings, color: CustomColors.black),
+        title: '',
+        onPressed: () {},
+      ),
       backgroundColor: CustomColors.beige,
-      body: SafeArea(
-        child: TwoColumnLayout(
-          start: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: avatarSize,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
-                child: Image.asset(
-                  AppImage.logo,
-                  fit: BoxFit.cover,
-                ),
+      body: TwoColumnLayout(
+        start: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            height: avatarSize,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16.0),
+              child: Image.asset(
+                AppImage.logo,
+                fit: BoxFit.cover,
               ),
             ),
           ),
-          end: SizedBox(
-            child: HomeScreenLeftColumn(
+        ),
+        end: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
               children: [
                 HomeScreenLeftColumnButton(
                   onTap: () {

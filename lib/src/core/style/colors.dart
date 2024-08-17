@@ -7,4 +7,5 @@ class CustomColors {
   static const Color babyBlue = Color(0xFF89CFF0);
   static const Color softMintGreen = Color(0xFFB2F7EF);
   static const Color lightLavender = Color(0xFFE6E6FA);
+  static const Color black = Color(0xFF2E2A2A);
 }

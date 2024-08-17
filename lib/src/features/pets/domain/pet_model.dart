@@ -1,6 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:easy_localization/easy_localization.dart';
 part 'pet_model.freezed.dart';
 part 'pet_model.g.dart';
 

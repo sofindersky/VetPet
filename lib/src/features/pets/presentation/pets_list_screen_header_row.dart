@@ -17,7 +17,6 @@ class PetsListScreenHeaderRow extends StatelessWidget {
               const Spacer(),
               Text(tr('pet_name'), style: s16w400black).expanded(),
               Text(tr('owner_name'), style: s16w400black).expanded(),
-              Text(tr('birth_date'), style: s16w400black).expanded(),
               Text(tr('type'), style: s16w400black).expanded(),
             ],
           ),

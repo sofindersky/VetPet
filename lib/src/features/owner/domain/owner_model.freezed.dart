@@ -21,11 +21,11 @@ Owner _$OwnerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Owner {
   String get fullName => throw _privateConstructorUsedError;
-  int get ownerId => throw _privateConstructorUsedError;
+  int get ownerId =>
+      throw _privateConstructorUsedError; // Ідентифікатор власника
   String get email => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
-  Pet get pet => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,10 +42,7 @@ abstract class $OwnerCopyWith<$Res> {
       int ownerId,
       String email,
       String phoneNumber,
-      String address,
-      Pet pet});
-
-  $PetCopyWith<$Res> get pet;
+      String address});
 }
 
 /// @nodoc
@@ -66,7 +63,6 @@ class _$OwnerCopyWithImpl<$Res, $Val extends Owner>
     Object? email = null,
     Object? phoneNumber = null,
     Object? address = null,
-    Object? pet = null,
   }) {
     return _then(_value.copyWith(
       fullName: null == fullName
@@ -89,19 +85,7 @@ class _$OwnerCopyWithImpl<$Res, $Val extends Owner>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      pet: null == pet
-          ? _value.pet
-          : pet // ignore: cast_nullable_to_non_nullable
-              as Pet,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $PetCopyWith<$Res> get pet {
-    return $PetCopyWith<$Res>(_value.pet, (value) {
-      return _then(_value.copyWith(pet: value) as $Val);
-    });
   }
 }
 
@@ -117,11 +101,7 @@ abstract class _$$OwnerImplCopyWith<$Res> implements $OwnerCopyWith<$Res> {
       int ownerId,
       String email,
       String phoneNumber,
-      String address,
-      Pet pet});
-
-  @override
-  $PetCopyWith<$Res> get pet;
+      String address});
 }
 
 /// @nodoc
@@ -140,7 +120,6 @@ class __$$OwnerImplCopyWithImpl<$Res>
     Object? email = null,
     Object? phoneNumber = null,
     Object? address = null,
-    Object? pet = null,
   }) {
     return _then(_$OwnerImpl(
       fullName: null == fullName
@@ -163,10 +142,6 @@ class __$$OwnerImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      pet: null == pet
-          ? _value.pet
-          : pet // ignore: cast_nullable_to_non_nullable
-              as Pet,
     ));
   }
 }
@@ -180,8 +155,7 @@ class _$OwnerImpl extends _Owner {
       required this.ownerId,
       required this.email,
       required this.phoneNumber,
-      required this.address,
-      required this.pet})
+      required this.address})
       : super._();
 
   factory _$OwnerImpl.fromJson(Map<String, dynamic> json) =>
@@ -191,18 +165,17 @@ class _$OwnerImpl extends _Owner {
   final String fullName;
   @override
   final int ownerId;
+// Ідентифікатор власника
   @override
   final String email;
   @override
   final String phoneNumber;
   @override
   final String address;
-  @override
-  final Pet pet;
 
   @override
   String toString() {
-    return 'Owner(fullName: $fullName, ownerId: $ownerId, email: $email, phoneNumber: $phoneNumber, address: $address, pet: $pet)';
+    return 'Owner(fullName: $fullName, ownerId: $ownerId, email: $email, phoneNumber: $phoneNumber, address: $address)';
   }
 
   @override
@@ -216,14 +189,13 @@ class _$OwnerImpl extends _Owner {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.pet, pet) || other.pet == pet));
+            (identical(other.address, address) || other.address == address));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, fullName, ownerId, email, phoneNumber, address, pet);
+  int get hashCode =>
+      Object.hash(runtimeType, fullName, ownerId, email, phoneNumber, address);
 
   @JsonKey(ignore: true)
   @override
@@ -245,8 +217,7 @@ abstract class _Owner extends Owner {
       required final int ownerId,
       required final String email,
       required final String phoneNumber,
-      required final String address,
-      required final Pet pet}) = _$OwnerImpl;
+      required final String address}) = _$OwnerImpl;
   const _Owner._() : super._();
 
   factory _Owner.fromJson(Map<String, dynamic> json) = _$OwnerImpl.fromJson;
@@ -255,14 +226,12 @@ abstract class _Owner extends Owner {
   String get fullName;
   @override
   int get ownerId;
-  @override
+  @override // Ідентифікатор власника
   String get email;
   @override
   String get phoneNumber;
   @override
   String get address;
-  @override
-  Pet get pet;
   @override
   @JsonKey(ignore: true)
   _$$OwnerImplCopyWith<_$OwnerImpl> get copyWith =>
