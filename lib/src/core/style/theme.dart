@@ -9,9 +9,10 @@ class CTheme {
     scaffoldBackgroundColor: Colors.white,
     checkboxTheme: customCheckBoxTheme,
     colorScheme: _base.colorScheme.copyWith(
-        primary: CustomColors.beige,
-        onPrimary: Colors.white,
-        secondary: CustomColors.babyBlue,),
+      primary: CustomColors.beige,
+      onPrimary: Colors.white,
+      secondary: CustomColors.babyBlue,
+    ),
     cardTheme: _base.cardTheme.copyWith(
       color: CustomColors.softMintGreen,
       shape: RoundedRectangleBorder(
@@ -19,7 +20,7 @@ class CTheme {
       ),
     ),
   );
-//TODO: replace the colors for checkbox to the relevant colors
+
   static final CheckboxThemeData customCheckBoxTheme = CheckboxThemeData(
     fillColor: WidgetStateProperty.resolveWith<Color?>(
       (Set states) => states.contains(WidgetState.selected)

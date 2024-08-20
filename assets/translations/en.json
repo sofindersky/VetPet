@@ -13,7 +13,9 @@
     "settings": "Settings",
     "general_settings": "General Settings",
     "about": "About",
-    "language": "Language"
+    "language": "Language",
+    "about_placeholder": "Localized text for about page"
+    
 
 
 }
