@@ -2,12 +2,9 @@ import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/features/home/home_screen.dart';
 import 'package:pet_vet_project/src/features/pet/pet_details_screen.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen.dart';
+import 'package:pet_vet_project/src/features/settings/presentation/settings_screen.dart';
 
-enum AppRoutes {
-  home,
-  petList,
-  petDetails,
-}
+enum AppRoutes { home, petList, petDetails, settings }
 
 final goRouter = GoRouter(
   initialLocation: '/',
@@ -33,6 +30,11 @@ final goRouter = GoRouter(
               },
             ),
           ],
+        ),
+        GoRoute(
+          path: 'settings',
+          name: AppRoutes.settings.name,
+          builder: (context, state) => const SettingsScreen(),
         ),
       ],
     ),

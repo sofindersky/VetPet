@@ -12,7 +12,6 @@ class PetsListScreenRow extends ConsumerWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final dateFormatter = ref.watch(dateFormatterProvider);
     final petImage = pet.type == PetType.dog ? AppImage.puppy : AppImage.kitten;
     return GestureDetector(
       onTap: onTap,

@@ -9,7 +9,11 @@
     "other": "Other",
     "birth_date": "Birth Date",
     "info": "Info",
-    "age": "Age"
+    "age": "Age",
+    "settings": "Settings",
+    "general_settings": "General Settings",
+    "about": "About",
+    "language": "Language"
 
 
 }

@@ -6,6 +6,9 @@ const String _fontFamily = 'Montserrat';
 CustomTextStyle get appBarTitle => font.s24.w600.black;
 CustomTextStyle get s12w400black => font.s12.w400.black;
 
+CustomTextStyle get s14w400beige => font.s14.w400.beige;
+CustomTextStyle get s14w400black => font.s14.w400.black;
+
 CustomTextStyle get s16w400black => font.s16.w400.black;
 CustomTextStyle get s16w500black => font.s16.w500.black;
 CustomTextStyle get s24w400black => font.s24.w400.black;

@@ -6,7 +6,7 @@ import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/core/helper/images.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/features/home/home_screen_left_column.dart';
+
 import 'package:pet_vet_project/src/features/home/home_screen_left_column_button.dart';
 import 'package:pet_vet_project/src/routes/app_routes.dart';
 
@@ -30,7 +30,9 @@ class HomeScreenBody extends StatelessWidget {
       appBar: MainAppBar(
         icon: const Icon(Icons.settings, color: CustomColors.black),
         title: '',
-        onPressed: () {},
+        onPressed: () {
+          context.goNamed(AppRoutes.settings.name);
+        },
       ),
       backgroundColor: CustomColors.beige,
       body: TwoColumnLayout(
