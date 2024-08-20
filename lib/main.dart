@@ -10,8 +10,8 @@ void main() async {
   runApp(
     ProviderScope(
       child: EasyLocalization(
-        supportedLocales: SupportedLocales.supportedLocales,
         fallbackLocale: const Locale('uk'),
+        supportedLocales: SupportedLocales.supportedLocales,
         path: 'assets/translations',
         child: const MyApp(),
       ),

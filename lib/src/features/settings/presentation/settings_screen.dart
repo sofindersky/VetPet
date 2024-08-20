@@ -6,7 +6,6 @@ import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/settings_about.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/settings_general.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/widgets/settings_screen_navigation_item.dart';
-import 'package:pet_vet_project/src/routes/app_routes.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -50,7 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       appBar: MainAppBar(
         title: tr('settings'),
-        onPressed: () => context.goNamed(AppRoutes.home.name),
+        onPressed: () => context.pop(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
