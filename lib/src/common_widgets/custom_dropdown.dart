@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
+import 'package:pet_vet_project/src/core/style/text_style.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
   const CustomDropdown({
@@ -31,11 +32,7 @@ class CustomDropdown<T> extends StatelessWidget {
           ),
           child: DropdownButton<T>(
             padding: const EdgeInsets.only(left: 16),
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: CustomColors.black,
-            ),
+            style: s14w400black,
             value: value,
             hint: hint,
             items: items,
