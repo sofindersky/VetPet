@@ -1,9 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
+import 'package:pet_vet_project/src/core/helper/images.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/widgets/language_selection_dropdown.dart';
+import 'package:pet_vet_project/src/features/settings/presentation/widgets/pet_icons_inherited.dart';
 
 class SettingsGeneral extends StatefulWidget {
   const SettingsGeneral({super.key});
@@ -28,6 +30,7 @@ class _SettingsGeneralState extends State<SettingsGeneral> {
 
   @override
   Widget build(BuildContext context) {
+    final isRealistic = PetIconsInherited.of(context).isRealistic;
     return Row(
       children: [
         DecoratedBox(
@@ -55,6 +58,22 @@ class _SettingsGeneralState extends State<SettingsGeneral> {
                     LanguageSelectionDropdown(),
                   ],
                 ),
+                OverflowBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(tr('icons_style'), style: s14w400black),
+                    Text(
+                      '${tr('realistic')}/${tr('cute')}',
+                      style: s14w400black,
+                    ),
+                    Switch.adaptive(
+                      value: isRealistic,
+                      onChanged: (_) {
+                        _updateIcons();
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -62,5 +81,22 @@ class _SettingsGeneralState extends State<SettingsGeneral> {
         Spacer(),
       ],
     );
+  }
+
+  _updateIcons() {
+    final currentIcons = PetIconsInherited.of(context).petIcons;
+
+    final newIcons = currentIcons.puppyIcon == AppImage.puppy &&
+            currentIcons.kittenIcon == AppImage.kitten
+        ? currentIcons.copyWith(
+            puppyIcon: AppImage.puppyRealistic,
+            kittenIcon: AppImage.kittenRealistic,
+          )
+        : currentIcons.copyWith(
+            puppyIcon: AppImage.puppy,
+            kittenIcon: AppImage.kitten,
+          );
+
+    PetIconsInherited.of(context).updateIcons(newIcons);
   }
 }

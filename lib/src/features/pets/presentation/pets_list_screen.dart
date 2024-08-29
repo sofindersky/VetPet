@@ -10,7 +10,6 @@ import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_
 import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_row.dart';
 import 'package:pet_vet_project/src/routes/app_routes.dart';
 
-//TODO: For now the riverpod package is used; maybe refactor later to use BLOC
 class PetsListScreen extends ConsumerWidget {
   const PetsListScreen({super.key});
 

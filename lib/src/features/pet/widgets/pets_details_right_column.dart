@@ -4,10 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/core/helper/date_formatter.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
-import 'package:pet_vet_project/src/core/helper/images.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
+import 'package:pet_vet_project/src/features/settings/presentation/widgets/pet_icons_inherited.dart';
 
 class PetsDetailsRightColumn extends ConsumerWidget {
   const PetsDetailsRightColumn({super.key, required this.pet});
@@ -15,7 +15,11 @@ class PetsDetailsRightColumn extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dateFormatter = ref.watch(dateFormatterProvider);
-    final petImage = pet.type == PetType.dog ? AppImage.puppy : AppImage.kitten;
+    final petIcons = PetIconsInherited.of(context);
+
+    final petImage = pet.type == PetType.dog
+        ? petIcons.petIcons.puppyIcon
+        : petIcons.petIcons.kittenIcon;
     return Card(
       color: CustomColors.beige,
       child: Padding(
