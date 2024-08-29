@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/app.dart';
 import 'package:pet_vet_project/src/core/helper/supported_locales.dart';
+import 'package:pet_vet_project/src/features/settings/presentation/widgets/pet_icons_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,7 @@ void main() async {
         supportedLocales: SupportedLocales.supportedLocales,
         fallbackLocale: const Locale('uk'),
         path: 'assets/translations',
-        child: const MyApp(),
+        child: PetIconsProvider(child: const MyApp()),
       ),
     ),
   );
