@@ -24,6 +24,7 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('CURRENT LOCALE: ${context.locale}');
     final width = MediaQuery.sizeOf(context).width;
     final double avatarSize = width >= 600 ? width : width * 0.25;
     return Scaffold(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
-import 'package:pet_vet_project/src/core/helper/images.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
+import 'package:pet_vet_project/src/features/settings/presentation/widgets/pet_icons_inherited.dart';
 
 class PetsListScreenRow extends ConsumerWidget {
   const PetsListScreenRow({super.key, required this.pet, required this.onTap});
@@ -11,7 +11,10 @@ class PetsListScreenRow extends ConsumerWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final petImage = pet.type == PetType.dog ? AppImage.puppy : AppImage.kitten;
+    final petIcons = PetIconsInherited.of(context);
+    final petImage = pet.type == PetType.dog
+        ? petIcons.petIcons.puppyIcon
+        : petIcons.petIcons.kittenIcon;
     return GestureDetector(
       onTap: onTap,
       child: Column(
