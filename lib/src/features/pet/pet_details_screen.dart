@@ -20,6 +20,7 @@ class PetDetailsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    //Lesson13: The usage of the riverpod
     final petAsyncValue = ref.watch(petByIdProvider(id));
 
     return Scaffold(
@@ -28,6 +29,7 @@ class PetDetailsScreen extends ConsumerWidget {
         title: '$petName',
         onPressed: () => context.pop(),
       ),
+      //The usage of the AsyncValue.when method
       body: petAsyncValue.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (err, stack) => Center(child: Text('Error: $err')),

@@ -4,6 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'owners_controller.g.dart';
 
+//Lesson13: Check the OwnersController class => here the riverpod_annotation is used to generate the controller
 @riverpod
 class OwnersController extends _$OwnersController {
   OwnersController() : super();

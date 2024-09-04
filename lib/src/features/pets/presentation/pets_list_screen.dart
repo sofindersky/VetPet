@@ -33,6 +33,8 @@ class PetsListScreen extends ConsumerWidget {
         //TODO: add here the search option
         children: [
           const PetsListScreenHeaderRow(),
+
+          //Lesson13: The usage of the AsyncValue.when method to handle the different states and show the appropriate widget based on the state
           petsList
               .when(
                 data: (data) => Padding(
