@@ -15,6 +15,7 @@ import 'package:pet_vet_project/src/features/pets/presentation/widgets/add_ped_d
 import 'package:pet_vet_project/src/features/pets/presentation/widgets/add_pet_dialog_textfield.dart';
 import 'package:uuid/uuid.dart';
 
+//Lesson10: Add a dialog to add a new pet
 Future<void> showAddPetDialod({required BuildContext context}) async {
   return showDialog(
     context: context,
