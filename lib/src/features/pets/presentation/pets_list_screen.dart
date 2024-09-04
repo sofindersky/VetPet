@@ -45,6 +45,7 @@ class PetsListScreen extends ConsumerWidget {
                       return PetsListScreenRow(
                         pet: pet,
                         onTap: () {
+                          //Lesson14: usage of context.goNamed()
                           context.goNamed(
                             AppRoutes.petDetails.name,
                             pathParameters: {'id': pet.petId},
