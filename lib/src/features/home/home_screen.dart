@@ -64,11 +64,20 @@ class HomeScreenBody extends StatelessWidget {
                 ),
                 gapH8,
                 HomeScreenLeftColumnButton(
-                  onTap: () {},
+                  onTap: () {
+                    context.goNamed(AppRoutes.owners.name);
+                  },
                   text: tr('owners'),
                   icon: Icons.person_pin_sharp,
                 ),
                 gapH8,
+                HomeScreenLeftColumnButton(
+                  onTap: () {
+                    context.goNamed(AppRoutes.visits.name);
+                  },
+                  text: tr('visits'),
+                  icon: Icons.calendar_today,
+                ),
               ],
             ),
           ),

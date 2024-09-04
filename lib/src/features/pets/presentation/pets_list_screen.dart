@@ -6,8 +6,9 @@ import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_controller.dart';
-import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_header_row.dart';
-import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen_row.dart';
+import 'package:pet_vet_project/src/features/pets/presentation/widgets/add_pet_dialog.dart';
+import 'package:pet_vet_project/src/features/pets/presentation/widgets/pets_list_screen_header_row.dart';
+import 'package:pet_vet_project/src/features/pets/presentation/widgets/pets_list_screen_row.dart';
 import 'package:pet_vet_project/src/routes/app_routes.dart';
 
 class PetsListScreen extends ConsumerWidget {
@@ -17,12 +18,19 @@ class PetsListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final petsList = ref.watch(petsControllerProvider);
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showAddPetDialod(context: context);
+        },
+        child: const Icon(Icons.add_circle_outline_rounded),
+      ),
       appBar: MainAppBar(
         title: tr('fluffy_patients'),
         onPressed: () => context.pop(),
       ),
       //TODO: create the error widget
       body: Column(
+        //TODO: add here the search option
         children: [
           const PetsListScreenHeaderRow(),
           petsList

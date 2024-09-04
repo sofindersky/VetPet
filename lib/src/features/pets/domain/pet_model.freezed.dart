@@ -172,9 +172,9 @@ class __$$PetImplCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res, _$PetImpl>
 class _$PetImpl extends _Pet {
   const _$PetImpl(
       {required this.petName,
-      required this.petId,
-      required this.ownerId,
-      required this.ownerFullName,
+      this.petId = '',
+      this.ownerId = 0,
+      this.ownerFullName = '',
       required this.birthday,
       this.type = PetType.other,
       required this.petHistory})
@@ -186,10 +186,13 @@ class _$PetImpl extends _Pet {
   @override
   final String petName;
   @override
+  @JsonKey()
   final String petId;
   @override
+  @JsonKey()
   final int ownerId;
   @override
+  @JsonKey()
   final String ownerFullName;
   @override
   final DateTime birthday;
@@ -243,9 +246,9 @@ class _$PetImpl extends _Pet {
 abstract class _Pet extends Pet {
   const factory _Pet(
       {required final String petName,
-      required final String petId,
-      required final int ownerId,
-      required final String ownerFullName,
+      final String petId,
+      final int ownerId,
+      final String ownerFullName,
       required final DateTime birthday,
       final PetType type,
       required final String petHistory}) = _$PetImpl;

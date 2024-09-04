@@ -9,14 +9,27 @@ class PetsController extends _$PetsController {
 
   @override
   Future<List<Pet>> build() async {
-    return await ref.read(fakeRepositoryProvider).fetchPets();
+    return await ref.read(fakePetsRepositoryProvider).fetchPets();
   }
 
   Future<Pet> fetchPetById(String id) async {
-    return await ref.read(fakeRepositoryProvider).fetchPetById(id);
+    state = AsyncLoading();
+
+    return await ref.read(fakePetsRepositoryProvider).fetchPetById(id);
+  }
+
+  Future<bool> addPet(Pet pet) async {
+    state = AsyncLoading();
+    try {
+      await ref.read(fakePetsRepositoryProvider).addPet(pet);
+      state = AsyncData(await ref.read(fakePetsRepositoryProvider).fetchPets());
+    } catch (e, st) {
+      state = AsyncError(e, st);
+    }
+    return state.hasError == false;
   }
 }
 
 final petByIdProvider = FutureProvider.family<Pet, String>((ref, id) async {
-  return ref.read(fakeRepositoryProvider).fetchPetById(id);
+  return ref.read(fakePetsRepositoryProvider).fetchPetById(id);
 });

@@ -74,7 +74,12 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                       children: [
                         Text(pet.petName, style: s16w400black),
                         gapH8,
-                        Text(pet.ownerFullName, style: s16w400black),
+                        Text(
+                          pet.ownerFullName.isNotEmpty
+                              ? pet.ownerFullName
+                              : tr('no_owners_found'),
+                          style: s16w400black,
+                        ),
                         gapH8,
                         Text(
                           dateFormatter.format(pet.birthday),

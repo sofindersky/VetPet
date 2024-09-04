@@ -13,12 +13,26 @@ class CTheme {
       onPrimary: Colors.white,
       secondary: CustomColors.babyBlue,
     ),
+    floatingActionButtonTheme: fabTheme,
     cardTheme: _base.cardTheme.copyWith(
       color: CustomColors.softMintGreen,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
     ),
+  );
+
+  static final FloatingActionButtonThemeData fabTheme =
+      FloatingActionButtonThemeData(
+    shape: RoundedRectangleBorder(
+      side: BorderSide(
+        color: CustomColors.black,
+        width: 1.0,
+      ),
+      borderRadius: BorderRadius.circular(12.0),
+    ),
+    backgroundColor: CustomColors.babyBlue,
+    foregroundColor: CustomColors.black,
   );
 
   static final CheckboxThemeData customCheckBoxTheme = CheckboxThemeData(

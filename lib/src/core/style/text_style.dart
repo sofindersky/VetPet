@@ -4,8 +4,11 @@ import 'package:pet_vet_project/src/core/style/colors.dart';
 CustomTextStyle get font => Font();
 const String _fontFamily = 'Montserrat';
 CustomTextStyle get appBarTitle => font.s24.w600.black;
+
+CustomTextStyle get s12w400grey => font.s12.w400.grey;
 CustomTextStyle get s12w400black => font.s12.w400.black;
 
+CustomTextStyle get s14w400red => font.s14.w400.red;
 CustomTextStyle get s14w400beige => font.s14.w400.beige;
 CustomTextStyle get s14w400black => font.s14.w400.black;
 
@@ -72,6 +75,9 @@ class CustomTextStyle extends TextStyle {
       copyWith(color: CustomColors.lightLavender);
   CustomTextStyle get softPink => copyWith(color: CustomColors.softPink);
   CustomTextStyle get black => copyWith(color: Colors.blueGrey[900]);
+  CustomTextStyle get grey =>
+      copyWith(color: Color.fromARGB(255, 126, 119, 119));
+  CustomTextStyle get red => copyWith(color: Color.fromARGB(255, 235, 31, 113));
 
 //font weight
   CustomTextStyle get w400 => copyWith(fontWeight: FontWeight.w400);

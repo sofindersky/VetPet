@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:uuid/uuid.dart';
 
 part 'pet_model.freezed.dart';
 part 'pet_model.g.dart';
@@ -10,7 +11,7 @@ enum PetType {
   dog,
   other;
 
-  String get name {
+  String get petTypeName {
     switch (this) {
       case PetType.cat:
         return tr('cat');
@@ -18,6 +19,16 @@ enum PetType {
         return tr('dog');
       case PetType.other:
         return tr('other');
+    }
+  }
+
+  static PetType fromString(String petTypeStr) {
+    if (petTypeStr == tr('cat')) {
+      return PetType.cat;
+    } else if (petTypeStr == tr('dog')) {
+      return PetType.dog;
+    } else {
+      return PetType.other;
     }
   }
 }
@@ -28,15 +39,32 @@ class Pet with _$Pet {
   const factory Pet({
     required String petName,
     required String petId,
-    required int ownerId,
-    required String ownerFullName,
+    @Default(0) int ownerId,
+    @Default('') String ownerFullName,
     required DateTime birthday,
-    @Default(PetType.other) PetType type,
+    required PetType type,
     required String petHistory,
   }) = _Pet;
 
   factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
-
+  factory Pet.create({
+    required String petName,
+    int ownerId = 0,
+    String ownerFullName = '',
+    required DateTime birthday,
+    PetType type = PetType.other,
+    required String petHistory,
+  }) {
+    return Pet(
+      petName: petName,
+      petId: const Uuid().v4(),
+      ownerId: ownerId,
+      ownerFullName: ownerFullName,
+      birthday: birthday,
+      type: type,
+      petHistory: petHistory,
+    );
+  }
   int get age {
     final now = DateTime.now();
     int age = now.year - birthday.year;

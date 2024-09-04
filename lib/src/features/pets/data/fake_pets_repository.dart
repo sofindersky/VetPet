@@ -5,6 +5,7 @@ import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
 class FakePetsRepository {
   Future<List<Pet>> fetchPets() async {
     await Future.delayed(const Duration(seconds: 1));
+    pets.sort((a, b) => b.birthday.compareTo(a.birthday));
     return pets;
   }
 
@@ -12,7 +13,12 @@ class FakePetsRepository {
     await Future.delayed(const Duration(seconds: 1));
     return pets.firstWhere((pet) => pet.petId == id);
   }
+
+  Future<void> addPet(Pet pet) async {
+    await Future.delayed(const Duration(seconds: 1));
+    pets.add(pet);
+  }
 }
 
-final fakeRepositoryProvider =
+final fakePetsRepositoryProvider =
     Provider.autoDispose((ref) => FakePetsRepository());
