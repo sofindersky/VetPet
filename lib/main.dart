@@ -12,7 +12,7 @@ void main() async {
     ProviderScope(
       child: EasyLocalization(
         fallbackLocale: const Locale('uk'),
-        supportedLocales: SupportedLocales.supportedLocales,
+        supportedLocales: supportedLocales,
         path: 'assets/translations',
         child: PetIconsProvider(child: const MyApp()),
       ),

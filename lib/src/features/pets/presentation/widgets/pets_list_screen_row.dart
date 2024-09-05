@@ -30,7 +30,7 @@ class PetsListScreenRow extends StatelessWidget {
                     : tr('no_owners_found'),
                 style: s16w400black,
               ).expanded(),
-              Text(pet.type.name, style: s16w400black).expanded(),
+              Text(pet.type.petTypeName, style: s16w400black).expanded(),
             ],
           ),
         ],
