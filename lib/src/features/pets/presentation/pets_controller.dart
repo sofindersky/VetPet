@@ -3,6 +3,7 @@ import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'pets_controller.g.dart';
 
+//Lesson13: Check the PetsController class => here the riverpod_annotation is used to generate the providers
 @riverpod
 class PetsController extends _$PetsController {
   PetsController() : super();
@@ -30,6 +31,7 @@ class PetsController extends _$PetsController {
   }
 }
 
+//Lesson13: Here we do not use the riverpod_annotation
 final petByIdProvider = FutureProvider.family<Pet, String>((ref, id) async {
   return ref.read(fakePetsRepositoryProvider).fetchPetById(id);
 });

@@ -24,6 +24,7 @@ class FakeOwnersRepository implements OwnersRepository {
   }
 }
 
+//Lesson13: Check the FakeOwnersRepository class => here the riverpod_annotation is used to generate the providers
 @riverpod
 FakeOwnersRepository fakeOwnersRepository(FakeOwnersRepositoryRef ref) {
   return FakeOwnersRepository();

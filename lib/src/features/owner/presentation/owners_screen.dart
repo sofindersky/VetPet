@@ -14,6 +14,7 @@ class OwnersScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    //Lesson13: The usage of the riverpod
     final ownersList = ref.watch(ownersControllerProvider);
     return Scaffold(
       appBar: MainAppBar(
