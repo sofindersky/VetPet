@@ -4,6 +4,7 @@ import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
 
+//Lesson10: Add a dropdown to select the pet type
 class AddPetTypeDialogDropdown extends StatefulWidget {
   const AddPetTypeDialogDropdown({
     super.key,

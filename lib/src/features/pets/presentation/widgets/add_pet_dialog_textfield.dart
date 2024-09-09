@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 
+//Lesson10: Added TextFormField widget to create a text field for the dialog
 class AddPetDialogTextField extends StatelessWidget {
   const AddPetDialogTextField({
     required this.controller,

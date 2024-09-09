@@ -18,6 +18,7 @@ class PetsListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final petsList = ref.watch(petsControllerProvider);
     return Scaffold(
+      //Lesson10: Add a floating action button to add a new pet
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showAddPetDialod(context: context);
