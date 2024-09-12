@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
+      //Lesson14: router config
       routerConfig: goRouter,
       debugShowCheckedModeBanner: false,
       restorationScopeId: 'vet_pet_app',

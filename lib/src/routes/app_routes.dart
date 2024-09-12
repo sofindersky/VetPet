@@ -6,6 +6,7 @@ import 'package:pet_vet_project/src/features/pets/presentation/pets_list_screen.
 import 'package:pet_vet_project/src/features/settings/presentation/settings_screen.dart';
 import 'package:pet_vet_project/src/features/visits/presentation/visits_list_screen.dart';
 
+//Lesson14: Here we have the configuration file for the routing; to be extended later;
 enum AppRoutes { home, petList, petDetails, settings, owners, visits }
 
 final goRouter = GoRouter(

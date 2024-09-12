@@ -32,6 +32,7 @@ class HomeScreenBody extends StatelessWidget {
         icon: const Icon(Icons.settings, color: CustomColors.black),
         title: '',
         onPressed: () {
+          //Lesson14: Usage of the goNamed
           context.goNamed(AppRoutes.settings.name);
         },
       ),
@@ -57,6 +58,9 @@ class HomeScreenBody extends StatelessWidget {
               children: [
                 HomeScreenLeftColumnButton(
                   onTap: () {
+                    //Lesson14: Usage of the goNamed() method
+                    // Note: This is not the only place in the app where context.goNamed() is used;
+                    // see line 72 and 80;
                     context.goNamed(AppRoutes.petList.name);
                   },
                   text: tr('fluffy_patients'),

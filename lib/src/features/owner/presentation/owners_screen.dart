@@ -18,6 +18,8 @@ class OwnersScreen extends ConsumerWidget {
     return Scaffold(
       appBar: MainAppBar(
         title: tr('owners'),
+        // Lesson14: Demonstrating usage of context.pop() to navigate back with the GoRouter package
+        // Note: This is not the only place in the app where context.pop() is used
         onPressed: () => context.pop(),
       ),
       body: Column(
