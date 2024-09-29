@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
 
+//This approach is no longer used
+
 CustomTextStyle get font => Font();
 const String _fontFamily = 'Montserrat';
-CustomTextStyle get appBarTitle => font.s24.w600.black;
+// CustomTextStyle get appBarTitle => font.s24.w600.black;
 
-CustomTextStyle get s12w400grey => font.s12.w400.grey;
-CustomTextStyle get s12w400black => font.s12.w400.black;
+// CustomTextStyle get s12w400grey => font.s12.w400.grey;
+// CustomTextStyle get s12w400black => font.s12.w400.black;
 
-CustomTextStyle get s14w400red => font.s14.w400.red;
-CustomTextStyle get s14w400beige => font.s14.w400.beige;
-CustomTextStyle get s14w400black => font.s14.w400.black;
+// CustomTextStyle get s14w400red => font.s14.w400.red;
+// CustomTextStyle get s14w400beige => font.s14.w400.beige;
+// CustomTextStyle get s14w400black => font.s14.w400.black;
 
-CustomTextStyle get s16w400black => font.s16.w400.black;
-CustomTextStyle get s16w500black => font.s16.w500.black;
-CustomTextStyle get s24w400black => font.s24.w400.black;
+// CustomTextStyle get s16w400black => font.s16.w400.black;
+// CustomTextStyle get s16w500black => font.s16.w500.black;
+// CustomTextStyle get s24w400black => font.s24.w400.black;
 
 class Font extends CustomTextStyle {
   Font()
@@ -65,19 +67,19 @@ class CustomTextStyle extends TextStyle {
   CustomTextStyle get s32 => copyWith(fontSize: 32.0);
 
 //colors
-  CustomTextStyle get darkBeige => copyWith(color: CustomColors.darkBeige);
-  CustomTextStyle get beige => copyWith(color: CustomColors.beige);
-  CustomTextStyle get white => copyWith(color: Colors.white);
-  CustomTextStyle get babyBlue => copyWith(color: CustomColors.babyBlue);
-  CustomTextStyle get softMintGreen =>
-      copyWith(color: CustomColors.softMintGreen);
-  CustomTextStyle get lightLavender =>
-      copyWith(color: CustomColors.lightLavender);
-  CustomTextStyle get softPink => copyWith(color: CustomColors.softPink);
-  CustomTextStyle get black => copyWith(color: Colors.blueGrey[900]);
-  CustomTextStyle get grey =>
-      copyWith(color: Color.fromARGB(255, 126, 119, 119));
-  CustomTextStyle get red => copyWith(color: Color.fromARGB(255, 235, 31, 113));
+  // CustomTextStyle get darkBeige => copyWith(color: CustomColors.darkBeige);
+  // CustomTextStyle get beige => copyWith(color: CustomColors.beige);
+  // CustomTextStyle get white => copyWith(color: Colors.white);
+  // CustomTextStyle get babyBlue => copyWith(color: CustomColors.babyBlue);
+  // CustomTextStyle get softMintGreen =>
+  //     copyWith(color: CustomColors.softMintGreen);
+  // CustomTextStyle get lightLavender =>
+  //     copyWith(color: CustomColors.lightLavender);
+  // CustomTextStyle get softPink => copyWith(color: CustomColors.softPink);
+  // CustomTextStyle get black => copyWith(color: Colors.blueGrey[900]);
+  // CustomTextStyle get grey =>
+  //     copyWith(color: Color.fromARGB(255, 126, 119, 119));
+  // CustomTextStyle get red => copyWith(color: Color.fromARGB(255, 235, 31, 113));
 
 //font weight
   CustomTextStyle get w400 => copyWith(fontWeight: FontWeight.w400);

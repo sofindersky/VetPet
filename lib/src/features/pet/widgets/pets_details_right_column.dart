@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/core/helper/date_formatter.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/color_extension.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/widgets/pet_icons_inherited.dart';
 
@@ -14,6 +14,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
   final Pet pet;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final color = Theme.of(context).extension<ColorExtension>();
     final dateFormatter = ref.watch(dateFormatterProvider);
     final petIcons = PetIconsInherited.of(context);
 
@@ -21,7 +22,6 @@ class PetsDetailsRightColumn extends ConsumerWidget {
         ? petIcons.petIcons.puppyIcon
         : petIcons.petIcons.kittenIcon;
     return Card(
-      color: CustomColors.beige,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -34,14 +34,17 @@ class PetsDetailsRightColumn extends ConsumerWidget {
             DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                color: CustomColors.softPink,
+                color: color?.softPink,
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(tr('info'), style: s24w400black),
+                    Text(
+                      tr('info'),
+                      style: AppTextStyles(context).s24w400black,
+                    ),
                   ],
                 ),
               ),
@@ -50,7 +53,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
             DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                color: CustomColors.softPink,
+                color: color?.softPink,
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -60,35 +63,50 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(tr('pet_name'), style: s16w400black),
+                        Text(
+                          tr('pet_name'),
+                          style: AppTextStyles(context).s16w400black,
+                        ),
                         gapH8,
-                        Text(tr('owner_name'), style: s16w400black),
+                        Text(
+                          tr('owner_name'),
+                          style: AppTextStyles(context).s16w400black,
+                        ),
                         gapH8,
-                        Text(tr('birth_date'), style: s16w400black),
+                        Text(
+                          tr('birth_date'),
+                          style: AppTextStyles(context).s16w400black,
+                        ),
                         gapH8,
-                        Text(tr('age'), style: s16w400black),
+                        Text(
+                          tr('age'),
+                          style: AppTextStyles(context).s16w400black,
+                        ),
                       ],
                     ).expanded(),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(pet.petName, style: s16w400black),
+                        Text(
+                          pet.petName,
+                          style: AppTextStyles(context).s16w400black,
+                        ),
                         gapH8,
                         Text(
                           pet.ownerFullName.isNotEmpty
                               ? pet.ownerFullName
                               : tr('no_owners_found'),
-                          style: s16w400black,
+                          style: AppTextStyles(context).s16w400black,
                         ),
                         gapH8,
                         Text(
                           dateFormatter.format(pet.birthday),
-                          style: s16w400black,
+                          style: AppTextStyles(context).s16w400black,
                         ),
                         gapH8,
                         Text(
                           '${pet.age}',
-                          style: s16w400black,
+                          style: AppTextStyles(context).s16w400black,
                         ),
                       ],
                     ).expanded(),

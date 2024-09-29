@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
+import 'package:pet_vet_project/src/core/style/theme_extension.dart';
 
 class CustomDropdown<T> extends StatelessWidget {
   const CustomDropdown({
@@ -22,17 +23,19 @@ class CustomDropdown<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).extension<CustomThemeExtension>();
+
     return DropdownButtonHideUnderline(
       child: SizedBox(
         height: 32,
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: CustomColors.darkBeige,
+            color: colorScheme?.decorateBoxBackground,
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: DropdownButton<T>(
             padding: const EdgeInsets.only(left: 16),
-            style: s14w400black,
+            style: AppTextStyles(context).s14w400black,
             value: value,
             hint: hint,
             items: items,
@@ -43,9 +46,9 @@ class CustomDropdown<T> extends StatelessWidget {
             },
             icon: const Icon(
               Icons.keyboard_arrow_down,
-              color: CustomColors.black,
             ),
-            dropdownColor: CustomColors.beige,
+            //TODO: add to theme this color
+            dropdownColor: colorScheme?.decorateBoxBackground,
             selectedItemBuilder: (BuildContext context) {
               return selectedItemBuilder(context);
             },

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
-
-import '../core/style/colors.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({
@@ -18,8 +16,9 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appBarColor = Theme.of(context).appBarTheme.backgroundColor;
     return AppBar(
-      backgroundColor: backgroundColor ?? CustomColors.softMintGreen,
+      backgroundColor: backgroundColor ?? appBarColor,
       automaticallyImplyLeading: false,
       title: TitleRow(
         title: title,
@@ -50,7 +49,10 @@ class TitleRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: appBarTitle),
+        Text(
+          title,
+          style: AppTextStyles(context).appBarTitle,
+        ),
         IconButton(
           icon: icon,
           onPressed: onPressed,

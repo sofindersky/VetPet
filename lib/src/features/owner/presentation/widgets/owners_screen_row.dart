@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 import 'package:pet_vet_project/src/features/owner/domain/owner_model.dart';
 
 class OwnersScreenRow extends StatelessWidget {
@@ -18,12 +18,15 @@ class OwnersScreenRow extends StatelessWidget {
         Row(
           children: [
             Spacer(),
-            Text(owner.fullName, style: s16w400black).expanded(),
+            Text(owner.fullName, style: AppTextStyles(context).s16w400black)
+                .expanded(),
             GestureDetector(
               onTap: onPhoneTap,
-              child: Text(owner.phoneNumber, style: s16w400black),
+              child: Text(owner.phoneNumber,
+                  style: AppTextStyles(context).s16w400black,),
             ).expanded(),
-            Text(owner.email, style: s16w400black).expanded(flex: 2),
+            Text(owner.email, style: AppTextStyles(context).s16w400black)
+                .expanded(flex: 2),
             Spacer(),
           ],
         ),

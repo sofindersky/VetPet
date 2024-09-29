@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 
 class AddPetDialogTextField extends StatelessWidget {
   const AddPetDialogTextField({
@@ -22,13 +22,13 @@ class AddPetDialogTextField extends StatelessWidget {
     return TextFormField(
       validator: validator,
       maxLines: maxLength ?? 1,
-      style: s12w400black,
+      style: AppTextStyles(context).s12w400black,
       readOnly: readOnly ?? false,
       onTap: onTap,
       decoration: InputDecoration(
-        errorStyle: s14w400red,
+        errorStyle: AppTextStyles(context).s14w400red,
         hintText: hintText,
-        hintStyle: s12w400grey,
+        hintStyle: AppTextStyles(context).s12w400grey,
         border: InputBorder.none,
       ),
       controller: controller,

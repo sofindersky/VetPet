@@ -7,8 +7,7 @@ import 'package:pet_vet_project/src/common_widgets/date_picker.dart';
 import 'package:pet_vet_project/src/core/helper/date_formatter.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/core/helper/validator.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 import 'package:pet_vet_project/src/features/pets/domain/pet_model.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_controller.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/widgets/add_ped_dialog_dropdown.dart';
@@ -20,12 +19,6 @@ Future<void> showAddPetDialod({required BuildContext context}) async {
     context: context,
     builder: (context) {
       return Dialog(
-        backgroundColor: CustomColors.lightLavender,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            8.0,
-          ),
-        ),
         child: SingleChildScrollView(
           child: Container(
             child: Padding(
@@ -89,7 +82,10 @@ class _AddPetDialogContentState extends ConsumerState<_AddPetDialogContent> {
       if (succes) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(tr('pet_was_added'), style: s14w400beige),
+            content: Text(
+              tr('pet_was_added'),
+              style: AppTextStyles(context).s14w400beige,
+            ),
             duration: Duration(milliseconds: 500),
           ),
         );
@@ -113,7 +109,7 @@ class _AddPetDialogContentState extends ConsumerState<_AddPetDialogContent> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(tr('add_pet'), style: s24w400black),
+            Text(tr('add_pet'), style: AppTextStyles(context).s24w400black),
             gapH20,
             AddPetDialogTextField(
               validator: EmptyTextFieldValidator.validate,

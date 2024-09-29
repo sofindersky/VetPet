@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/color_extension.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
@@ -13,6 +12,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.foregroundColor,
   }) : super(key: key);
   final VoidCallback onPressed;
+
   final String text;
   final bool isLoading;
   final Color? backgroundColor;
@@ -20,12 +20,13 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final customColors = Theme.of(context).extension<ColorExtension>();
     return ElevatedButton(
       style: ButtonStyle(
-        textStyle: WidgetStateProperty.all(s12w400black),
+        textStyle: WidgetStateProperty.all(AppTextStyles(context).s12w400black),
         backgroundColor: backgroundColor != null
             ? WidgetStateProperty.all(backgroundColor)
-            : WidgetStateProperty.all(CustomColors.babyBlue),
+            : WidgetStateProperty.all(customColors?.babyBlue),
         foregroundColor: foregroundColor != null
             ? WidgetStateProperty.all(foregroundColor)
             : WidgetStateProperty.all(Colors.white),

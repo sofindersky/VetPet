@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
+import 'package:pet_vet_project/src/core/style/color_extension.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 
 class SettingsScreenNavigationItem extends StatefulWidget {
   const SettingsScreenNavigationItem({
@@ -23,10 +24,11 @@ class _SettingsScreenNavigationItemState
     extends State<SettingsScreenNavigationItem> {
   @override
   Widget build(final BuildContext context) {
+    final color = Theme.of(context).extension<ColorExtension>()?.babyBlue;
     return GestureDetector(
       onTap: widget.onTap,
       child: ColoredBox(
-        color: widget.isSelected ? CustomColors.babyBlue : Colors.transparent,
+        color: widget.isSelected ? color! : Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
@@ -34,7 +36,9 @@ class _SettingsScreenNavigationItemState
             children: [
               Text(
                 widget.title,
-                style: widget.isSelected ? s14w400beige : s14w400black,
+                style: widget.isSelected
+                    ? AppTextStyles(context).s14w400beige
+                    : AppTextStyles(context).s14w400black,
               ).expanded(),
             ],
           ),
