@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
@@ -16,6 +15,12 @@ class PetsListScreenRow extends StatelessWidget {
     final petImage = pet.type == PetType.dog
         ? petIcons.petIcons.puppyIcon
         : petIcons.petIcons.kittenIcon;
+    final type = pet.type;
+    final petText = switch (type) {
+      PetType.cat => context.tr.cat,
+      PetType.dog => context.tr.dog,
+      PetType.other => context.tr.other,
+    };
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -28,11 +33,11 @@ class PetsListScreenRow extends StatelessWidget {
               Text(
                 pet.ownerFullName.isNotEmpty
                     ? pet.ownerFullName
-                    : tr('no_owners_found'),
+                    : context.tr.no_owners_found,
                 style: AppTextStyles(context).s16w400black,
               ).expanded(),
               Text(
-                pet.type.petTypeName,
+                petText,
                 style: AppTextStyles(context).s16w400black,
               ).expanded(),
             ],

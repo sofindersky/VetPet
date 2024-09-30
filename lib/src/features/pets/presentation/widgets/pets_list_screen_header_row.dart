@@ -1,8 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
-import 'package:pet_vet_project/src/core/style/color_extension.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
+
 import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 import 'package:pet_vet_project/src/core/style/theme_extension.dart';
 
@@ -20,11 +18,15 @@ class PetsListScreenHeaderRow extends StatelessWidget {
           child: Row(
             children: [
               const Spacer(),
-              Text(tr('pet_name'), style: AppTextStyles(context).s16w400black)
-                  .expanded(),
-              Text(tr('owner_name'), style: AppTextStyles(context).s16w400black)
-                  .expanded(),
-              Text(tr('type'), style: AppTextStyles(context).s16w400black)
+              Text(
+                context.tr.pet_name,
+                style: AppTextStyles(context).s16w400black,
+              ).expanded(),
+              Text(
+                context.tr.owner_name,
+                style: AppTextStyles(context).s16w400black,
+              ).expanded(),
+              Text(context.tr.type, style: AppTextStyles(context).s16w400black)
                   .expanded(),
             ],
           ),

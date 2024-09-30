@@ -1,5 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:uuid/uuid.dart';
 
 part 'pet_model.freezed.dart';
@@ -10,27 +11,6 @@ enum PetType {
   cat,
   dog,
   other;
-
-  String get petTypeName {
-    switch (this) {
-      case PetType.cat:
-        return tr('cat');
-      case PetType.dog:
-        return tr('dog');
-      case PetType.other:
-        return tr('other');
-    }
-  }
-
-  static PetType fromString(String petTypeStr) {
-    if (petTypeStr == tr('cat')) {
-      return PetType.cat;
-    } else if (petTypeStr == tr('dog')) {
-      return PetType.dog;
-    } else {
-      return PetType.other;
-    }
-  }
 }
 
 @freezed

@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
@@ -58,7 +57,7 @@ class _SettingsGeneralState extends ConsumerState<SettingsGeneral> {
                   alignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      tr('language'),
+                      context.tr.language,
                       style: AppTextStyles(context).s14w400black,
                     ),
                     LanguageSelectionDropdown(),
@@ -68,11 +67,7 @@ class _SettingsGeneralState extends ConsumerState<SettingsGeneral> {
                   alignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      tr('icons_style'),
-                      style: AppTextStyles(context).s14w400black,
-                    ),
-                    Text(
-                      '${tr('realistic')}/${tr('cute')}',
+                      '${context.tr.realistic}/${context.tr.cute}',
                       style: AppTextStyles(context).s14w400black,
                     ),
                     Switch(

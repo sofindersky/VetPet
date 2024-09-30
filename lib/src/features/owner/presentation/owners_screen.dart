@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +16,7 @@ class OwnersScreen extends ConsumerWidget {
     final ownersList = ref.watch(ownersControllerProvider);
     return Scaffold(
       appBar: MainAppBar(
-        title: tr('owners'),
+        title: context.tr.owners,
         onPressed: () => context.pop(),
       ),
       body: Column(

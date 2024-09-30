@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
+import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
 import 'package:pet_vet_project/src/core/helper/images.dart';
 import 'package:pet_vet_project/src/features/home/home_screen_left_column_button.dart';
@@ -22,7 +22,6 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('CURRENT LOCALE: ${context.locale}');
     final width = MediaQuery.sizeOf(context).width;
     final theme = Theme.of(context);
     final double avatarSize = width >= 600 ? width : width * 0.25;
@@ -57,7 +56,7 @@ class HomeScreenBody extends StatelessWidget {
                   onTap: () {
                     context.goNamed(AppRoutes.petList.name);
                   },
-                  text: tr('fluffy_patients'),
+                  text: context.tr.fluffyPatients,
                   icon: Icons.pets,
                 ),
                 gapH8,
@@ -65,7 +64,7 @@ class HomeScreenBody extends StatelessWidget {
                   onTap: () {
                     context.goNamed(AppRoutes.owners.name);
                   },
-                  text: tr('owners'),
+                  text: context.tr.owners,
                   icon: Icons.person_pin_sharp,
                 ),
                 gapH8,
@@ -73,7 +72,7 @@ class HomeScreenBody extends StatelessWidget {
                   onTap: () {
                     context.goNamed(AppRoutes.visits.name);
                   },
-                  text: tr('visits'),
+                  text: context.tr.visits,
                   icon: Icons.calendar_today,
                 ),
               ],

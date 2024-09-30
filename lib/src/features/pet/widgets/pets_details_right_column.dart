@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/core/helper/date_formatter.dart';
@@ -42,7 +41,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      tr('info'),
+                      context.tr.info,
                       style: AppTextStyles(context).s24w400black,
                     ),
                   ],
@@ -64,22 +63,22 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          tr('pet_name'),
+                          context.tr.pet_name,
                           style: AppTextStyles(context).s16w400black,
                         ),
                         gapH8,
                         Text(
-                          tr('owner_name'),
+                          context.tr.owner_name,
                           style: AppTextStyles(context).s16w400black,
                         ),
                         gapH8,
                         Text(
-                          tr('birth_date'),
+                          context.tr.birth_date,
                           style: AppTextStyles(context).s16w400black,
                         ),
                         gapH8,
                         Text(
-                          tr('age'),
+                          context.tr.age,
                           style: AppTextStyles(context).s16w400black,
                         ),
                       ],
@@ -95,7 +94,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                         Text(
                           pet.ownerFullName.isNotEmpty
                               ? pet.ownerFullName
-                              : tr('no_owners_found'),
+                              : context.tr.no_owners_found,
                           style: AppTextStyles(context).s16w400black,
                         ),
                         gapH8,
