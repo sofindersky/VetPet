@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/helper/images.dart';
@@ -52,7 +51,7 @@ class _SettingsGeneralState extends State<SettingsGeneral> {
                   alignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      tr('language'),
+                      context.tr.language,
                       style: s14w400black,
                     ),
                     LanguageSelectionDropdown(),
@@ -61,9 +60,9 @@ class _SettingsGeneralState extends State<SettingsGeneral> {
                 OverflowBar(
                   alignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(tr('icons_style'), style: s14w400black),
+                    Text(context.tr.icons_style, style: s14w400black),
                     Text(
-                      '${tr('realistic')}/${tr('cute')}',
+                      '${context.tr.realistic}/${context.tr.cute}',
                       style: s14w400black,
                     ),
                     Switch.adaptive(

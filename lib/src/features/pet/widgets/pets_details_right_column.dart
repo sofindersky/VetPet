@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/core/helper/date_formatter.dart';
@@ -41,7 +40,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(tr('info'), style: s24w400black),
+                    Text(context.tr.info, style: s24w400black),
                   ],
                 ),
               ),
@@ -60,13 +59,13 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(tr('pet_name'), style: s16w400black),
+                        Text(context.tr.pet_name, style: s16w400black),
                         gapH8,
-                        Text(tr('owner_name'), style: s16w400black),
+                        Text(context.tr.owner_name, style: s16w400black),
                         gapH8,
-                        Text(tr('birth_date'), style: s16w400black),
+                        Text(context.tr.birth_date, style: s16w400black),
                         gapH8,
-                        Text(tr('age'), style: s16w400black),
+                        Text(context.tr.age, style: s16w400black),
                       ],
                     ).expanded(),
                     Column(
@@ -77,7 +76,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
                         Text(
                           pet.ownerFullName.isNotEmpty
                               ? pet.ownerFullName
-                              : tr('no_owners_found'),
+                              : context.tr.no_owners_found,
                           style: s16w400black,
                         ),
                         gapH8,

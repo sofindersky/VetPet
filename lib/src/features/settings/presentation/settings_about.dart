@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/style/text_style.dart';
 
 class SettingsAbout extends StatelessWidget {
@@ -10,7 +10,7 @@ class SettingsAbout extends StatelessWidget {
     return Row(
       children: [
         Text(
-          tr('about_placeholder'),
+          context.tr.about_placeholder,
           style: s12w400black,
         ),
       ],

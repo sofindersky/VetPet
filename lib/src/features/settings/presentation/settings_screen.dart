@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
+import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/settings_about.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/settings_general.dart';
 import 'package:pet_vet_project/src/features/settings/presentation/widgets/settings_screen_navigation_item.dart';
@@ -44,13 +44,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
     /// We put here the list of pages that we want to display in the build method because of the localization
 
     final List<String> _pages = [
-      tr('general_settings'),
-      tr('about'),
+      context.tr.general_settings,
+      context.tr.about,
     ];
 
     return Scaffold(
       appBar: MainAppBar(
-        title: tr('settings'),
+        title: context.tr.settings,
         onPressed: () => context.pop(),
       ),
       body: Padding(

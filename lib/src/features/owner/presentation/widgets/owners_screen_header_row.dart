@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/style/colors.dart';
@@ -16,9 +15,9 @@ class OwnerScreenHeaderRow extends StatelessWidget {
           child: Row(
             children: [
               const Spacer(),
-              Text(tr('full_name'), style: s16w400black).expanded(),
-              Text(tr('phone'), style: s16w400black).expanded(),
-              Text(tr('email'), style: s16w400black).expanded(flex: 2),
+              Text(context.tr.full_name, style: s16w400black).expanded(),
+              Text(context.tr.phone, style: s16w400black).expanded(),
+              Text(context.tr.email, style: s16w400black).expanded(flex: 2),
               Spacer(),
             ],
           ),
