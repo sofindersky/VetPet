@@ -7,7 +7,7 @@ final localeProvider = Provider.autoDispose<Locale>((ref) {
 
   return localeAsyncValue.when(
     data: (locale) => locale,
-    loading: () => const Locale('en'),
-    error: (error, stack) => const Locale('en'),
+    loading: () => const Locale('uk'),
+    error: (error, stack) => const Locale('uk'),
   );
 });

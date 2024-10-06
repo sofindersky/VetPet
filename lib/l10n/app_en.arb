@@ -25,5 +25,8 @@
     "cute": "Cute",
     "about_placeholder": "Localized text for about page",
     "field_is_required": "This field is required",
-    "no_owners_found": "No owners found"
+    "no_owners_found": "No owners found",
+    "theme": "Theme",
+    "dark": "Dark",
+    "light": "Light"
 }

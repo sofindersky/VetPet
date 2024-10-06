@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
 
 //This approach is no longer used
 

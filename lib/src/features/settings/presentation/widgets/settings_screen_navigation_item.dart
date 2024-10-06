@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/style/color_extension.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 
 class SettingsScreenNavigationItem extends StatefulWidget {

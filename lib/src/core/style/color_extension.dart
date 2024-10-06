@@ -11,6 +11,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
     required this.black,
     required this.red,
     required this.grey,
+    this.white = Colors.white,
   });
 
   final Color? darkBeige;
@@ -22,6 +23,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
   final Color? black;
   final Color? red;
   final Color? grey;
+  final Color? white;
 
   @override
   ColorExtension copyWith({
@@ -34,6 +36,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
     Color? black,
     Color? red,
     Color? grey,
+    Color? white,
   }) {
     return ColorExtension(
       darkBeige: darkBeige ?? this.darkBeige,
@@ -45,12 +48,15 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
       black: black ?? this.black,
       red: red ?? this.red,
       grey: grey ?? this.grey,
+      white: white ?? this.white,
     );
   }
 
   @override
   ThemeExtension<ColorExtension> lerp(
-      covariant ThemeExtension<ColorExtension>? other, double t) {
+    covariant ThemeExtension<ColorExtension>? other,
+    double t,
+  ) {
     if (other is! ColorExtension) return this;
 
     return ColorExtension(
@@ -63,9 +69,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
       black: Color.lerp(black, other.black, t),
       red: Color.lerp(red, other.red, t),
       grey: Color.lerp(grey, other.grey, t),
+      white: Color.lerp(white, other.white, t),
     );
   }
 }
-
-
-

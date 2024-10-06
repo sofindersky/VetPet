@@ -4,17 +4,17 @@ import 'package:pet_vet_project/src/core/style/color_extension.dart';
 
 class AppTextStyles {
   AppTextStyles(BuildContext context)
-      : colors = Theme.of(context).extension<ColorExtension>(),
+      : customColors = Theme.of(context).extension<ColorExtension>(),
         montseratTextStyle = GoogleFonts.montserratAlternates();
 
-  final ColorExtension? colors;
+  final ColorExtension? customColors;
   final TextStyle montseratTextStyle;
 
   TextStyle get appBarTitle {
     return montseratTextStyle.copyWith(
       fontSize: 24,
       fontWeight: FontWeight.w600,
-      color: colors?.black,
+      color: customColors?.black,
     );
   }
 
@@ -22,7 +22,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 12,
       fontWeight: FontWeight.w400,
-      color: colors?.black,
+      color: customColors?.black,
     );
   }
 
@@ -30,7 +30,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      color: colors?.black,
+      color: customColors?.black,
     );
   }
 
@@ -38,7 +38,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 24,
       fontWeight: FontWeight.w400,
-      color: colors?.black,
+      color: customColors?.black,
     );
   }
 
@@ -46,7 +46,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w400,
-      color: colors?.black,
+      color: customColors?.black,
     );
   }
 
@@ -54,7 +54,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      color: colors?.black,
+      color: customColors?.black,
     );
   }
 
@@ -62,7 +62,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      color: colors?.red,
+      color: customColors?.red,
     );
   }
 
@@ -70,7 +70,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 12,
       fontWeight: FontWeight.w400,
-      color: colors?.grey,
+      color: customColors?.grey,
     );
   }
 
@@ -78,7 +78,7 @@ class AppTextStyles {
     return montseratTextStyle.copyWith(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      color: colors?.beige,
+      color: customColors?.beige,
     );
   }
 }

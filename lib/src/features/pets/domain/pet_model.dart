@@ -1,6 +1,4 @@
-import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:uuid/uuid.dart';
 
 part 'pet_model.freezed.dart';

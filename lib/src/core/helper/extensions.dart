@@ -7,6 +7,6 @@ extension ExpandedExtensions on Widget {
 
 extension LocalizationExtension on BuildContext {
   get tr {
-    return AppLocalizations.of(this)!;
+    return AppLocalizations.of(this);
   }
 }

@@ -21,6 +21,7 @@ class PetsDetailsRightColumn extends ConsumerWidget {
         ? petIcons.petIcons.puppyIcon
         : petIcons.petIcons.kittenIcon;
     return Card(
+      color: color?.beige,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

@@ -8,15 +8,11 @@ class CustomElevatedButton extends StatelessWidget {
     required this.onPressed,
     required this.text,
     required this.isLoading,
-    this.backgroundColor,
-    this.foregroundColor,
   }) : super(key: key);
-  final VoidCallback onPressed;
 
   final String text;
   final bool isLoading;
-  final Color? backgroundColor;
-  final Color? foregroundColor;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,24 +20,13 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         textStyle: WidgetStateProperty.all(AppTextStyles(context).s12w400black),
-        backgroundColor: backgroundColor != null
-            ? WidgetStateProperty.all(backgroundColor)
-            : WidgetStateProperty.all(customColors?.babyBlue),
-        foregroundColor: foregroundColor != null
-            ? WidgetStateProperty.all(foregroundColor)
-            : WidgetStateProperty.all(Colors.white),
-        shape: WidgetStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0),
-          ),
-        ),
       ),
       onPressed: onPressed,
       child: isLoading
-          ? const Padding(
+          ? Padding(
               padding: EdgeInsets.all(8.0),
               child: CircularProgressIndicator(
-                color: Colors.white,
+                color: customColors?.white,
               ),
             )
           : Text(

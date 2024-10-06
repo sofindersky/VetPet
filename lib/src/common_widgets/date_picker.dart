@@ -16,11 +16,11 @@ Future<DateTime?> selectDate(BuildContext context) async {
         data: theme.copyWith(
           colorScheme: colorScheme.copyWith(
             primary: colorExtension.babyBlue,
-            onPrimary: Colors.white,
+            onPrimary: colorExtension.white,
             surface: colorExtension.beige,
             onSurface: colorExtension.black,
           ),
-          dialogBackgroundColor: Colors.white,
+          dialogBackgroundColor: colorExtension.white,
         ),
         child: child!,
       );

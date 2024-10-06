@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pet_vet_project/src/common_widgets/custom_dropdown.dart';
+import 'package:pet_vet_project/src/core/helper/locale_controller.dart';
 import 'package:pet_vet_project/src/features/settings/domain/language_model.dart';
 
 class LanguageSelectionDropdown extends ConsumerWidget {
@@ -13,7 +14,9 @@ class LanguageSelectionDropdown extends ConsumerWidget {
 
     return CustomDropdown<String>(
       value: currentLanguage,
-      onChanged: (value) {},
+      onChanged: (value) {
+        ref.read(localeControllerProvider.notifier).setLocale(value);
+      },
       items: lngList.map((language) {
         return DropdownMenuItem<String>(
           value: language.code,

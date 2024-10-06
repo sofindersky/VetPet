@@ -39,7 +39,10 @@ BorderSide _checkBoxBorderSide = WidgetStateBorderSide.resolveWith(
 //Light Theme
 final lightTheme = _baseLight.copyWith(
   extensions: <ThemeExtension<dynamic>>[
-    CustomThemeExtension(decorateBoxBackground: _CustomColors.darkBeige),
+    CustomThemeExtension(
+      decorateBoxBackground: _CustomColors.darkBeige,
+      cardBackground: _CustomColors.softMintGreen,
+    ),
     ColorExtension(
       darkBeige: _CustomColors.darkBeige,
       beige: _CustomColors.beige,
@@ -56,6 +59,17 @@ final lightTheme = _baseLight.copyWith(
   appBarTheme: _baseLight.appBarTheme.copyWith(
     backgroundColor: _CustomColors.softMintGreen,
   ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(_CustomColors.babyBlue),
+      foregroundColor: WidgetStateProperty.all(Colors.white),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+      ),
+    ),
+  ),
   dialogBackgroundColor: _CustomColors.lightLavender,
   dialogTheme: _baseLight.dialogTheme.copyWith(shape: _dialogShape),
   floatingActionButtonTheme: _baseLight.floatingActionButtonTheme.copyWith(
@@ -66,7 +80,7 @@ final lightTheme = _baseLight.copyWith(
   checkboxTheme: _baseLight.checkboxTheme.copyWith(
     side: _checkBoxBorderSide,
     fillColor: WidgetStateProperty.resolveWith<Color?>(
-      (Set states) => states.contains(WidgetState.selected)
+      (Set<WidgetState> states) => states.contains(WidgetState.selected)
           ? _CustomColors.beige
           : _CustomColors.darkBeige,
     ),
@@ -86,12 +100,30 @@ final lightTheme = _baseLight.copyWith(
     shape: _cardShape,
   ),
   iconTheme: _baseLight.iconTheme.copyWith(color: _CustomColors.black),
+  switchTheme: _baseLight.switchTheme.copyWith(
+    trackOutlineColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return _CustomColors.lightLavender;
+      }
+      return _CustomColors.softPink;
+    }),
+    thumbColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return _CustomColors.babyBlue;
+      } else {
+        return _CustomColors.beige;
+      }
+    }),
+  ),
 );
 
 // Dark Theme
 final darkTheme = _baseDark.copyWith(
   extensions: <ThemeExtension<dynamic>>[
-    CustomThemeExtension(decorateBoxBackground: _CustomDarkColors.darkBeige),
+    CustomThemeExtension(
+      decorateBoxBackground: _CustomDarkColors.darkBeige,
+      cardBackground: _CustomDarkColors.softMintGreen,
+    ),
     ColorExtension(
       darkBeige: _CustomDarkColors.darkBeige,
       beige: _CustomDarkColors.beige,
@@ -105,6 +137,17 @@ final darkTheme = _baseDark.copyWith(
     ),
   ],
   scaffoldBackgroundColor: _CustomDarkColors.beige,
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(_CustomDarkColors.babyBlue),
+      foregroundColor: WidgetStateProperty.all(Colors.white),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+      ),
+    ),
+  ),
   dialogBackgroundColor: _CustomDarkColors.lightLavender,
   dialogTheme: _baseDark.dialogTheme.copyWith(shape: _dialogShape),
   appBarTheme: _baseDark.appBarTheme.copyWith(
@@ -126,16 +169,31 @@ final darkTheme = _baseDark.copyWith(
   canvasColor: _CustomDarkColors.lightLavender,
   colorScheme: _baseDark.colorScheme.copyWith(
     primary: _CustomDarkColors.beige,
-    onPrimary: _CustomColors.black,
+    onPrimary: _CustomDarkColors.black,
     secondary: _CustomDarkColors.babyBlue,
-    onSecondary: _CustomColors.black,
+    onSecondary: _CustomDarkColors.black,
     surface: _CustomDarkColors.softPink,
     tertiary: _CustomDarkColors.softPink,
-    onTertiary: _CustomColors.black,
+    onTertiary: _CustomDarkColors.black,
   ),
   cardTheme: _baseDark.cardTheme
       .copyWith(color: _CustomDarkColors.lightLavender, shape: _cardShape),
   iconTheme: _baseLight.iconTheme.copyWith(color: _CustomDarkColors.black),
+  switchTheme: _baseLight.switchTheme.copyWith(
+    trackOutlineColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return _CustomDarkColors.lightLavender;
+      }
+      return _CustomDarkColors.softPink;
+    }),
+    thumbColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return _CustomDarkColors.babyBlue;
+      } else {
+        return _CustomDarkColors.beige;
+      }
+    }),
+  ),
 );
 
 class _CustomColors {

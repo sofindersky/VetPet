@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
 import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 import 'package:pet_vet_project/src/core/style/theme_extension.dart';
 
@@ -15,22 +14,23 @@ class CustomDropdown<T> extends StatelessWidget {
   });
 
   final T? value;
-  final ValueChanged<T> onChanged;
   final List<DropdownMenuItem<T>> items;
   final List<Widget> Function(BuildContext) selectedItemBuilder;
-  final Widget Function(T) itemBuilder;
   final Widget? hint;
+
+  final ValueChanged<T> onChanged;
+  final Widget Function(T) itemBuilder;
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).extension<CustomThemeExtension>();
+    final customColors = Theme.of(context).extension<CustomThemeExtension>();
 
     return DropdownButtonHideUnderline(
       child: SizedBox(
         height: 32,
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: colorScheme?.decorateBoxBackground,
+            color: customColors?.decorateBoxBackground,
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: DropdownButton<T>(
@@ -47,8 +47,7 @@ class CustomDropdown<T> extends StatelessWidget {
             icon: const Icon(
               Icons.keyboard_arrow_down,
             ),
-            //TODO: add to theme this color
-            dropdownColor: colorScheme?.decorateBoxBackground,
+            dropdownColor: customColors?.decorateBoxBackground,
             selectedItemBuilder: (BuildContext context) {
               return selectedItemBuilder(context);
             },

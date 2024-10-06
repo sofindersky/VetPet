@@ -9,11 +9,11 @@ class OwnerScreenHeaderRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).extension<CustomThemeExtension>();
+    final customColors = Theme.of(context).extension<CustomThemeExtension>();
     return Column(
       children: [
         DecoratedBox(
-          decoration: BoxDecoration(color: colorScheme?.decorateBoxBackground),
+          decoration: BoxDecoration(color: customColors?.decorateBoxBackground),
           child: Row(
             children: [
               const Spacer(),

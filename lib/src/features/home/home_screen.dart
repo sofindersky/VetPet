@@ -56,7 +56,7 @@ class HomeScreenBody extends StatelessWidget {
                   onTap: () {
                     context.goNamed(AppRoutes.petList.name);
                   },
-                  text: context.tr.fluffyPatients,
+                  text: context.tr.fluffy_patients,
                   icon: Icons.pets,
                 ),
                 gapH8,

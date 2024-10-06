@@ -9,9 +9,11 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backgroundColor,
     this.icon,
   });
+
   final String title;
   final Color? backgroundColor;
   final Icon? icon;
+
   final VoidCallback onPressed;
 
   @override
