@@ -3,8 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/color_extension.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
+import 'package:pet_vet_project/src/core/style/theme_extension.dart';
+
 import 'package:pet_vet_project/src/features/pet/widgets/pets_details_right_column.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_controller.dart';
 
@@ -21,9 +23,12 @@ class PetDetailsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final petAsyncValue = ref.watch(petByIdProvider(id));
+    final customColors = Theme.of(context).extension<ColorExtension>();
+    final cardColor =
+        Theme.of(context).extension<CustomThemeExtension>()?.cardBackground;
 
     return Scaffold(
-      backgroundColor: CustomColors.lightLavender,
+      backgroundColor: customColors?.lightLavender,
       appBar: MainAppBar(
         title: '$petName',
         onPressed: () => context.pop(),
@@ -36,9 +41,13 @@ class PetDetailsScreen extends ConsumerWidget {
           end: Column(
             children: [
               Card(
+                color: cardColor,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(pet.petHistory, style: s16w500black),
+                  child: Text(
+                    pet.petHistory,
+                    style: AppTextStyles(context).s16w500black,
+                  ),
                 ),
               ),
             ],

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_vet_project/src/core/helper/extensions.dart';
 import 'package:pet_vet_project/src/core/helper/gaps.dart';
-import 'package:pet_vet_project/src/core/style/colors.dart';
-import 'package:pet_vet_project/src/core/style/text_style.dart';
+import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 
 class HomeScreenLeftColumnButton extends StatelessWidget {
   const HomeScreenLeftColumnButton({
@@ -17,11 +16,8 @@ class HomeScreenLeftColumnButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-        side: const BorderSide(color: CustomColors.darkBeige, width: 2),
-      ),
       child: InkWell(
         onTap: onTap,
         child: Padding(
@@ -29,9 +25,9 @@ class HomeScreenLeftColumnButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(icon, size: 48, color: CustomColors.softPink),
+              Icon(icon, size: 48, color: colorScheme.tertiary),
               gapW12,
-              Text(text, style: s24w400black).expanded(),
+              Text(text, style: AppTextStyles(context).s24w400black).expanded(),
             ],
           ),
         ),

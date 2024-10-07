@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +24,7 @@ class PetsListScreen extends ConsumerWidget {
         child: const Icon(Icons.add_circle_outline_rounded),
       ),
       appBar: MainAppBar(
-        title: tr('fluffy_patients'),
+        title: context.tr.fluffy_patients,
         onPressed: () => context.pop(),
       ),
       //TODO: create the error widget

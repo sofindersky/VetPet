@@ -20,9 +20,13 @@ The Veterinary Clinic App is designed for tablets and the web. It’s meant to h
 
 #### Project Timeline
 
+##### 06.10.2024
+
+• Changed the approach to app localization and added basic theme configuration.
+
 ##### 29.08.2024
 
-• gAdded logic to toggle between realistic and cute icons, as per the lesson requirements for using the InheritedWidget.
+• Added logic to toggle between realistic and cute icons, as per the lesson requirements for using the InheritedWidget.
 
 ##### 20.08.2024
 
