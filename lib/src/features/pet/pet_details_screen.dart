@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
 import 'package:pet_vet_project/src/common_widgets/main_app_bar.dart';
 import 'package:pet_vet_project/src/common_widgets/two_column_layout.dart';
 import 'package:pet_vet_project/src/core/style/color_extension.dart';
 import 'package:pet_vet_project/src/core/style/custom_text_styles.dart';
 import 'package:pet_vet_project/src/core/style/theme_extension.dart';
-
 import 'package:pet_vet_project/src/features/pet/widgets/pets_details_right_column.dart';
 import 'package:pet_vet_project/src/features/pets/presentation/pets_controller.dart';
 

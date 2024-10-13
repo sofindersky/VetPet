@@ -171,8 +171,8 @@ class __$$PetImplCopyWithImpl<$Res> extends _$PetCopyWithImpl<$Res, _$PetImpl>
 @JsonSerializable()
 class _$PetImpl extends _Pet {
   const _$PetImpl(
-      {required this.petName,
-      required this.petId,
+      {this.petName = '',
+      this.petId = '',
       this.ownerId = 0,
       this.ownerFullName = '',
       required this.birthday,
@@ -184,8 +184,10 @@ class _$PetImpl extends _Pet {
       _$$PetImplFromJson(json);
 
   @override
+  @JsonKey()
   final String petName;
   @override
+  @JsonKey()
   final String petId;
   @override
   @JsonKey()
@@ -243,8 +245,8 @@ class _$PetImpl extends _Pet {
 
 abstract class _Pet extends Pet {
   const factory _Pet(
-      {required final String petName,
-      required final String petId,
+      {final String petName,
+      final String petId,
       final int ownerId,
       final String ownerFullName,
       required final DateTime birthday,

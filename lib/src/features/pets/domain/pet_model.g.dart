@@ -7,8 +7,8 @@ part of 'pet_model.dart';
 // **************************************************************************
 
 _$PetImpl _$$PetImplFromJson(Map<String, dynamic> json) => _$PetImpl(
-      petName: json['petName'] as String,
-      petId: json['petId'] as String,
+      petName: json['petName'] as String? ?? '',
+      petId: json['petId'] as String? ?? '',
       ownerId: (json['ownerId'] as num?)?.toInt() ?? 0,
       ownerFullName: json['ownerFullName'] as String? ?? '',
       birthday: DateTime.parse(json['birthday'] as String),
